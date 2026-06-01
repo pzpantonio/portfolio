@@ -241,9 +241,14 @@ textarea {
   animation: fadeInUp 0.8s ease-out 0.6s forwards;
 }
 
-.hero-image img {
+.image-wrapper {
+  position: relative;
   width: 100%;
   max-width: 400px;
+}
+
+.image-wrapper img {
+  width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
@@ -251,6 +256,42 @@ textarea {
   padding: 10px;
   background: var(--surface-strong);
   box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 30px var(--accent-soft);
+}
+
+.floating-badge {
+  position: absolute;
+  background: rgba(26, 26, 26, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--accent);
+  color: #F4EFE5;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 15px var(--accent-soft);
+  z-index: 5;
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.badge-1 {
+  top: 15%;
+  left: -15px;
+  animation: floatBadge 3.5s ease-in-out infinite alternate;
+}
+
+.badge-2 {
+  bottom: 20%;
+  right: -15px;
+  animation: floatBadge 4s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatBadge {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-12px); }
 }
 
 .hero-actions {
@@ -599,11 +640,30 @@ p {
   font-size: 1rem;
 }
 
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 4rem;
+  padding: 1rem 0 2rem;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
 .tools-3d-grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 1.5rem;
-  margin-bottom: 6rem;
+  width: max-content;
+  animation: marqueeScroll 25s linear infinite;
+}
+
+.tools-3d-grid:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  to { transform: translateX(calc(-50% - 0.75rem)); }
 }
 
 .tool-3d-tag {
