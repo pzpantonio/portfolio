@@ -8,6 +8,60 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-projects .project-card {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 1.5rem !important;
+    }
+    .project-card-body {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .project-media {
+      width: 100%;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .project-media.vertical-media {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+    .project-media img,
+    .project-media video {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    .project-details h2 {
+      color: #F4EFE5;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .project-details p {
+      color: #E3C69D;
+      line-height: 1.7;
+      margin: 0;
+      font-size: 1.05rem;
+    }
+    .project-action {
+      display: flex;
+      justify-content: flex-start;
+      border-top: 1px solid rgba(227, 198, 157, 0.2);
+      padding-top: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .project-card-body {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -29,33 +83,125 @@
   <main class="container page-projects">
     <section class="section-intro">
       <p class="eyebrow">Featured Work</p>
-      <h1>Projects built for storytelling and usability.</h1>
-      <p>Below are a few examples of web experiences designed with clarity, performance, and polish.</p>
+      <h1>Academic Projects and Technical Implementations.</h1>
+      <p>Below is a curated selection of my academic work, demonstrating technical proficiency, quality assurance, and system development.</p>
     </section>
 
     <section class="project-list">
+      <!-- Project 1 -->
       <article class="project-card">
-        <div>
-          <h2>Portfolio Landing Page</h2>
-          <p>A responsive single-page portfolio layout with strong hierarchy, clear CTA, and mobile-friendly navigation.</p>
+        <div class="project-card-body">
+          <div class="project-media">
+            <img src="images/traineetrack.png" alt="TraineeTrack System" />
+          </div>
+          <div class="project-details">
+            <h2>TraineeTrack System</h2>
+            <p>This is our ongoing capstone project, which has already passed its Capstone 1 defense. I serve as the QA Tester and Documentation Lead for the system.</p>
+          </div>
         </div>
-        <a class="button button-sm" href="#">View details</a>
+        <div class="project-action">
+          <a class="btn-ghost" href="https://trainee-track-latest.vercel.app/">View here</a>
+        </div>
       </article>
 
+      <!-- Project 2 -->
       <article class="project-card">
-        <div>
-          <h2>Interactive Business Site</h2>
-          <p>A streamlined website built for service businesses, emphasizing content structure and conversion-focused design.</p>
+        <div class="project-card-body">
+          <div class="project-media">
+            <img src="images/valcitizen.png" alt="Survey Management" />
+          </div>
+          <div class="project-details">
+            <h2>Survey Management</h2>
+            <p>I served as the Documentation Lead and QA Tester for this system, which was our final project in CC106 – Application Development and Emerging Technology. The system is designed to efficiently collect, manage, and analyze citizen survey data to help improve public service delivery.</p>
+          </div>
         </div>
-        <a class="button button-sm" href="#">View details</a>
+        <div class="project-action">
+          <a class="btn-ghost" href="http://valcitizen.online/">View here</a>
+        </div>
       </article>
 
+      <!-- Project 3 -->
       <article class="project-card">
-        <div>
-          <h2>UI Refresh</h2>
-          <p>A design refresh with updated typography, spacing, and visual rhythm for improved readability and brand cohesion.</p>
+        <div class="project-card-body">
+          <div class="project-media">
+            <img src="images/healthylife.png" alt="HealthyLife Tracker" />
+          </div>
+          <div class="project-details">
+            <h2>HealthyLife Tracker</h2>
+            <p>I served as the Documentation Lead and QA Tester for this system, which was our final project in PF102 – Event Driven Programming. The system is designed to help users monitor their daily health metrics and support a balanced lifestyle through a simple and user-friendly interface.</p>
+          </div>
         </div>
-        <a class="button button-sm" href="#">View details</a>
+        <div class="project-action">
+          <a class="btn-ghost" href="https://healthylife-tracker-ft9qcvacnrb69uxqpm9ean.streamlit.app/">View here</a>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="project-card">
+        <div class="project-card-body">
+          <div class="project-media">
+            <img src="images/Banworx%20Picture.png" alt="Banworx" />
+          </div>
+          <div class="project-details">
+            <h2>Banworx</h2>
+            <p>I served as the developer for this project, which was our final requirement in WS101 – Web Systems and Technology. It is mainly an informational website, but it also includes a functional backend for ordering and management. The platform is an online motor shop focused on selling motor equipment and related products.</p>
+          </div>
+        </div>
+        <div class="project-action">
+          <a class="btn-ghost" href="https://banworxs.vercel.app/">View here</a>
+        </div>
+      </article>
+
+      <!-- Project 5 -->
+      <article class="project-card">
+        <div class="project-card-body">
+          <div class="project-media">
+            <video src="images/G1.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="project-details">
+            <h2>Memories of Alhambra</h2>
+            <p>A 2D top-down action-adventure final project for Object-Oriented Programming developed in Java using custom assets, where I also served as the Game Tester and Documentation Lead. Discover the gameplay overview and experience this unique gaming project.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 6 -->
+      <article class="project-card">
+        <div class="project-card-body">
+          <div class="project-media">
+            <img src="images/Barikada%20Picture.png" alt="Barikada" />
+          </div>
+          <div class="project-details">
+            <h2>Barikada</h2>
+            <p>Barikada Tower Defense is a strategic spin-off of the original Barikada card-battle game. While the main title centers on tactical deck-building inspired by Filipino history and folklore, this version reimagines those same elements into a fast-paced tower defense strategy experience.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 7 -->
+      <article class="project-card">
+        <div class="project-card-body">
+          <div class="project-media">
+            <img src="images/Accord%20Picture.png" alt="Accord" />
+          </div>
+          <div class="project-details">
+            <h2>Accord</h2>
+            <p>Accord is an immersive, choice-driven interactive narrative inspired by the suspenseful themes of slasher films. The gameplay revolves around high-stakes moral decisions, where each choice influences the unfolding story and determines the fate of the characters. With a distinct stylized look that blends cinematic visuals and retro-inspired interface elements, Accord challenges players to uncover secrets and navigate conflicts while balancing loyalty, truth, and the consequences of their actions.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 8 -->
+      <article class="project-card">
+        <div class="project-card-body">
+          <div class="project-media vertical-media">
+            <video src="images/Purchase.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="project-details">
+            <h2>Purchase</h2>
+            <p>An e-commerce UI design prototype created using Figma. This project was developed to explore user-centered layout principles, emphasizing intuitive navigation, clean visual design, and interactive elements to demonstrate effective human-computer interaction concepts.</p>
+          </div>
+        </div>
       </article>
     </section>
   </main>
@@ -63,16 +209,13 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="social-links">
-        <a href="#" aria-label="Instagram">
+        <a href="https://www.instagram.com/pzpantonio?igsh=ZjYwczJsYjd1bDk%3D&utm_source=qr" aria-label="Instagram">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
         </a>
-        <a href="#" aria-label="Facebook">
+        <a href="https://www.facebook.com/share/18nur1Z2Pr/?mibextid=wwXIfr" aria-label="Facebook">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
         </a>
-        <a href="#" aria-label="Telegram">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-        </a>
-        <a href="#" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/paul-zabdiel-antonio-590201413?utm_source=share_via&utm_content=profile&utm_medium=member_ios" aria-label="LinkedIn">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
         </a>
       </div>
