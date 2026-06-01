@@ -13,7 +13,9 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">P a u l</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
       <nav class="site-nav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -25,29 +27,47 @@
   </header>
 
   <main class="container page-contact">
-    <section class="section-intro">
-      <p class="eyebrow">Get in touch</p>
-      <h1>Have a project in mind?</h1>
-      <p>Send a quick message and I’ll get back to you soon.</p>
-    </section>
-
-    <section class="contact-panel">
-      <form id="contact-form" class="contact-form">
-        <label>
-          Name
-          <input type="text" name="name" required placeholder="Your name" />
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" required placeholder="you@example.com" />
-        </label>
-        <label>
-          Message
-          <textarea name="message" rows="6" required placeholder="Tell me about your project"></textarea>
-        </label>
-        <button type="submit" class="button">Send message</button>
-        <p id="form-status" class="form-status"></p>
-      </form>
+    <section class="contact-grid">
+      <div class="contact-text">
+        <p class="eyebrow">Get in touch</p>
+        <h1>Have a project in mind?</h1>
+        <p>Send a quick message and I’ll get back to you soon.</p>
+        
+        <div class="contact-info">
+          <div class="info-item">
+            <h4>Email</h4>
+            <p>pzpantonio@gmail.com</p>
+          </div>
+          <div class="info-item">
+            <h4>Phone</h4>
+            <p>+63 930 130 7496</p>
+          </div>
+          <div class="info-item">
+            <h4>Location</h4>
+            <p>Barangay Bagbaguin, Valenzuela City, Philippines</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-panel">
+        <form id="contact-form" class="contact-form" action="https://formsubmit.co/pzpantonio@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New Message from Portfolio!">
+          <input type="hidden" name="_captcha" value="false">
+          <label>
+            Name
+            <input type="text" name="name" required placeholder="Your name" />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required placeholder="you@example.com" />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="6" required placeholder="Tell me about your project"></textarea>
+          </label>
+          <button type="submit" class="button">Send message</button>
+          <p id="form-status" class="form-status"></p>
+        </form>
+      </div>
     </section>
   </main>
 

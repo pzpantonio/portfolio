@@ -25,7 +25,25 @@ if (contactForm) {
       return;
     }
 
-    formStatus.textContent = 'Thanks! Your message is ready to send.';
-    contactForm.reset();
+    formStatus.textContent = 'Sending message...';
+
+    fetch(contactForm.action.replace('formsubmit.co', 'formsubmit.co/ajax'), {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        formStatus.textContent = 'Thanks! Your message has been sent successfully.';
+        contactForm.reset();
+      } else {
+        formStatus.textContent = 'Oops! Something went wrong. Please try again.';
+      }
+    })
+    .catch(error => {
+      formStatus.textContent = 'Oops! There was a problem sending your message.';
+    });
   });
 }
